@@ -18,7 +18,8 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://farmer-monitor-production.up.railway.app/css/sb-admin-2.min.css">
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
