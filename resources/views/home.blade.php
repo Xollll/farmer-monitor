@@ -19,7 +19,8 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -296,7 +297,7 @@ aria-hidden="true">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             
             <!-- Logout Form -->
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+            <form id="logout-form" action="{{url('/logout') }}" method="POST" style="display: inline;">
                 @csrf
                 <button type="submit" class="btn btn-primary">Logout</button>
             </form>
@@ -318,10 +319,6 @@ aria-hidden="true">
 
     <!-- Page level plugins -->
     <script src="/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="/js/demo/chart-area-demo.js"></script>
-    <script src="/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
