@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HASH TECHIE OFFICIAL</title>
+    <title>FMS</title>
     <link rel="stylesheet" href="form/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -16,7 +15,7 @@
                 @csrf
                 <div class="input-box">
                     <i class='bx bxs-user'></i>
-                    <label for="email">Username</label>
+                    <label for="email">Email</label>
                     <input type="text" name="email" placeholder="Enter Your Email*" required>
                     @error('email')
                         <span class="text-danger">{{ $message }}</span>
