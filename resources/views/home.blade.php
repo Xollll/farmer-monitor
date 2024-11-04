@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link rel="stylesheet" href="{{ secure_asset('css/sb-admin-2.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/SB-admin-2.min.css') }}">
 
 
 
@@ -315,7 +315,7 @@
         <script src="https://code.jquery.com/jquery.easing.min.js"></script>
 
         <!-- Custom scripts for all pages-->
-        <script src="{{ asset('js/sb-admin-2.min.js', true) }}"></script>
+        <script src="{{ secure_asset('js/sb-admin-2.min.js', true) }}"></script>
 
     </div>
 </body>
