@@ -88,7 +88,7 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ route('password.update') }}">
+                <form method="POST" action="{{ secure_url('password.update') }}">
                     @csrf
 
                     <input type="hidden" name="token" value="{{ $token }}">
@@ -121,7 +121,7 @@
                     </div>
                 </form>
                 <div class="registeBtn">
-                    <p><a href="{{ route('login') }}">Back to Login</a></p>
+                    <p><a href="{{ secure_url('login') }}">Back to Login</a></p>
                 </div>
             </div>
         </div>

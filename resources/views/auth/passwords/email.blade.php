@@ -94,7 +94,7 @@
                     </div>
                 @endif
                 
-                <form method="POST" action="{{ route('password.email') }}">
+                <form method="POST" action="{{ secure_url('password.email') }}">
                     @csrf
 
                     <div class="input-box">
@@ -108,7 +108,7 @@
                     <button type="submit" class="btn">Send Password Reset Link</button>
                 </form>
                 <div class="registeBtn">
-                    <p><a href="{{ route('login') }}">Back to Login</a></p>
+                    <p><a href="{{ secure_url('login') }}">Back to Login</a></p>
                 </div>
             </div>
         </div>
