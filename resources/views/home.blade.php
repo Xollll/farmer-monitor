@@ -243,11 +243,11 @@
                                             );
 
                                              // Function to fetch and update the pH level data
-    // Function to fetch and update the pH level data
-function fetchAndUpdatePHLevel() {
-    fetch('/ph-chart')
-        .then(response => response.json())
-        .then(newData => {
+            // Function to fetch and update the pH level data
+            function fetchAndUpdatePHLevel() {
+            fetch('/ph-chart')
+            .then(response => response.json())
+            .then(newData => {
             if (newData.PHData !== null) {
                 const newPHLevel = newData.PHData;
 
@@ -270,27 +270,15 @@ function fetchAndUpdatePHLevel() {
 
                 // Re-render the chart with the new data
                 PhChart.update();
-            }
-        })
-        .catch(error => console.error('Error fetching pH data:', error));
-}
+                }
+            })
+                .catch(error => console.error('Error fetching pH data:', error));
+                }
 
-// Set interval to update pH data every 5 seconds
-setInterval(fetchAndUpdatePHLevel, 5000);
+                                        // Set interval to update pH data every 5 seconds
+                                        setInterval(fetchAndUpdatePHLevel, 5000);
                                         </script>
 
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-xl-8 col-lg-7">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-body">
-                                            <div class="chart-pie pt-4 pb-2">
-                                                <canvas id="PhChart"></canvas>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
