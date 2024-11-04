@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('css/sb-admin-2.min.css', true) }}" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" type="text/css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
