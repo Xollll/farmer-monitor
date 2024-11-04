@@ -15,4 +15,4 @@ Route::get('home', [HomeController::class, 'GraphPage'])
 
 // Separate API routes for real-time updates
 Route::get('/chart-data', [HomeController::class, 'getChartData']);
-Route::get('/ph-chart', [HomeController::class, 'PhChartData']);
+Route::get('/ph-chart', [HomeController::class, 'getPHData']);

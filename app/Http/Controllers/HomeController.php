@@ -94,4 +94,32 @@ class HomeController extends Controller
             return response()->json(['error' => 'An error occurred while fetching chart data'], 500);
         }
     }
+
+    public function getPHData()
+{
+    try {
+        // Define the ThingSpeak API endpoint for pH data
+        $channelID = 2725233;
+        $apiKey = 'RL4WQU642HO5I4WD';
+        $url = "https://api.thingspeak.com/channels/{$channelID}/fields/2.json?api_key={$apiKey}&results=1"; // Only latest pH data
+
+        // Fetch the data from ThingSpeak
+        $response = Http::get($url);
+
+        if ($response->successful()) {
+            $data = $response->json();
+            $phLevel = !empty($data['feeds']) && isset($data['feeds'][0]['field2']) ? (float)$data['feeds'][0]['field2'] : null;
+
+            return response()->json([
+                'PHData' => $phLevel,
+            ]);
+        }
+
+        return response()->json(['error' => 'Failed to retrieve pH data from ThingSpeak'], 500);
+
+    } catch (\Exception $e) {
+        Log::error('Error in getPHData: ' . $e->getMessage());
+        return response()->json(['error' => 'An error occurred while fetching pH data'], 500);
+    }
+}
 }

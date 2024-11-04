@@ -241,6 +241,42 @@
                                                 document.getElementById('PhChart'),
                                                 config
                                             );
+
+                                             // Function to fetch and update the pH level data
+    // Function to fetch and update the pH level data
+function fetchAndUpdatePHLevel() {
+    fetch('/ph-chart')
+        .then(response => response.json())
+        .then(newData => {
+            if (newData.PHData !== null) {
+                const newPHLevel = newData.PHData;
+
+                // Update the chart data
+                PhChart.data.datasets[0].data = [newPHLevel, 14 - newPHLevel];
+
+                // Update the center text to display the new pH level
+                doughnutPointer.afterDatasetsDraw = function (chart) {
+                    const { ctx } = chart;
+                    ctx.save();
+                    const xCenter = chart.getDatasetMeta(0).data[0].x;
+                    const yCenter = chart.getDatasetMeta(0).data[0].y;
+                    ctx.font = 'bold 30px sans-serif';
+                    ctx.fillStyle = 'black';
+                    ctx.textAlign = 'center';
+                    ctx.baseline = 'middle';
+                    ctx.fillText(newPHLevel.toFixed(1), xCenter, yCenter);
+                    ctx.restore();
+                };
+
+                // Re-render the chart with the new data
+                PhChart.update();
+            }
+        })
+        .catch(error => console.error('Error fetching pH data:', error));
+}
+
+// Set interval to update pH data every 5 seconds
+setInterval(fetchAndUpdatePHLevel, 5000);
                                         </script>
 
                                     </div>
@@ -262,16 +298,7 @@
                     </div>
                 </div>
                 <!-- End of Main Content -->
-
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2024</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
+                
 
             </div>
             <!-- End of Content Wrapper -->
