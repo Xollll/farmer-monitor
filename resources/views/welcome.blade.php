@@ -22,12 +22,8 @@
         </div>
     </div>
     <ul class="nav__links" id="nav-links">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-
     @if (Route::has('login'))
-    <div class="nav__btns flex flex-1 justify-end">
+    
         @auth
             <a
                 href="{{ url('/home') }}"
@@ -44,9 +40,9 @@
                 Sign In
             </a>
         @endauth
-    </div>
+    
 @endif
-
+</ul>
     </nav>
     <header class="header__container">
     <div class="header__image">
@@ -61,9 +57,7 @@
     <div class="header__content">
         <h1>Farmer<br />Monitor <span>System</span></h1>
         <p>
-          Embark on Your Journey Today and Discover Uncharted Wonders Around the
-          World - Your Adventure Awaits with Exciting Experiences, Unforgettable
-          Memories, and Endless Opportunities
+          A digital tool that helps Malaysian farmers track water quality to promote crop health and sustainable practices.
         </p>
       </div>
     </header>

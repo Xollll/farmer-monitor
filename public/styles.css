@@ -356,12 +356,13 @@ nav {
   }
 
   .sign__in {
-    color: var(--white);
-    background-color: var(--primary-color-green);
+    color: var(--primary-color-green);
+
   }
 
   .sign__in:hover {
-    background-color: var(--primary-color-dgreen);
+    color: var(--text-dark);
+    background-color: transparent;
   }
 
   .header__container {
