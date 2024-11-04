@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon; // Import Carbon
 
 class HomeController extends Controller
 {
@@ -34,7 +35,9 @@ class HomeController extends Controller
 
             foreach ($data['feeds'] as $feed) {
                 if (isset($feed['field1'])) {
-                    $labels[] = $feed['created_at']; // Timestamps for labels
+                     // Convert timestamp to Malaysia time
+                    $malaysiaTime = Carbon::parse($feed['created_at'])->setTimezone('Asia/Kuala_Lumpur');
+                    $labels[] = $malaysiaTime->format('Y-m-d H:i:s'); // Format as needed
                     $moistureData[] = $feed['field1']; // Moisture level for the data
                 }
             }
@@ -74,7 +77,8 @@ class HomeController extends Controller
 
                 foreach ($data['feeds'] as $feed) {
                     if (isset($feed['field1'])) {
-                        $labels[] = $feed['created_at']; // Timestamps for labels
+                        $malaysiaTime = Carbon::parse($feed['created_at'])->setTimezone('Asia/Kuala_Lumpur');
+                        $labels[] = $malaysiaTime->format('Y-m-d H:i:s'); // Format as needed
                         $moistureData[] = $feed['field1']; // Moisture level for the data
                     }
                 }
