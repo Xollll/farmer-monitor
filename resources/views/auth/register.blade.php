@@ -11,7 +11,7 @@
     <div class="container">
         <div class="Form register-form">
             <h2>{{ __('Register') }}</h2>
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ secure_url('register') }}">
                 @csrf
 
                 <div class="input-box">
