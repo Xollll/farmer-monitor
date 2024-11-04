@@ -11,7 +11,7 @@
     <div class="container">
         <div class="Form login-form">
             <h2>Login</h2>
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ secure_url('login') }}" method="POST">
                 @csrf
                 <div class="input-box">
                     <i class='bx bxs-user'></i>
