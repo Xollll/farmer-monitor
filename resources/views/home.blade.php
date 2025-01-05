@@ -12,13 +12,14 @@
     <title>Farmer Monitor System</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css', true) }}" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link rel="stylesheet" href="{{ secure_asset('css/SB-admin-2.min.css') }}">
+    <link rel="stylesheet" href="css/SB-admin-2.min.css">
 
 
 
@@ -38,7 +39,7 @@
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="icon-with-image">
-                        <img src="{{ asset('/img/leave.png', true) }}" alt="leave logo" style="width: 65px; height: 60px">
+                        <img src="/img/leave.png" alt="logo" style="width: 65px; height: 60px">
                     </i>
                 </div>
                 <div class="sidebar-brand-text mx-3">F M S</div>
@@ -85,7 +86,7 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     {{ Auth::user()->name }}
                                 </span>
-                                <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg', true) }}">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -313,7 +314,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <form id="logout-form" action="{{ secure_url('logout') }}" method="POST" class="d-none">
+                        <form id="logout-form" action="{{ url('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
                         <button class="btn btn-primary" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</button>
@@ -330,7 +331,7 @@
         <script src="https://code.jquery.com/jquery.easing.min.js"></script>
 
         <!-- Custom scripts for all pages-->
-        <script src="{{ secure_asset('js/sb-admin-2.min.js', true) }}"></script>
+        <script src="js/sb-admin-2.min.js"></script>
 
     </div>
 </body>
