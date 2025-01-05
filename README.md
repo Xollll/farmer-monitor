@@ -2,9 +2,6 @@
 
 The **Farmer Monitoring System** is a real-time monitoring platform designed to help farmers optimize crop health and water quality. It provides insightful visualizations, automated alerts, and robust data management to support sustainable agriculture.
 
-<p align="center">
-<img src="favicon.ico" alt="Farmer Monitoring System Logo">
-</p>
 
 ## Features
 
