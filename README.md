@@ -65,12 +65,7 @@ The **Farmer Monitoring System** is a real-time monitoring platform designed to 
    npm run dev
    ```
    
-### Key Notes:
-1. Use proper Markdown syntax for headings (e.g., `#`, `##`, `###`).
-2. Surround code snippets with triple backticks (```) and specify the language for syntax highlighting (e.g., `bash` for commands).
-3. Use inline links for images and URLs.
-4. Test the README rendering in a Markdown viewer or GitHub preview to ensure it looks correct. 
-5. Note that there a lot of custom css use in here.
 
-- The Farmer Monitoring System is open-source software licensed under the MIT license.
+
+The Farmer Monitoring System is open-source software licensed under the MIT license.
 
