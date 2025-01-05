@@ -65,7 +65,8 @@ The **Farmer Monitoring System** is a real-time monitoring platform designed to 
    npm run dev
    ```
    
-
+### Notes:
+- Noted that there a lot of custom css use in here.
 
 The Farmer Monitoring System is open-source software licensed under the MIT license.
 
